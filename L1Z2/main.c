@@ -26,7 +26,7 @@ p0 :
 	a0 b0
 	a2 b2
 	a4 b4
-	a6 b7
+	a6 b6
 p1 :
 	c0 d0
 	c2 d2
