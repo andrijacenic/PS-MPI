@@ -24,6 +24,7 @@
     <ProjectGuid>{c90e5bda-3bd0-4a51-8d11-2bdf68fd6fc6}</ProjectGuid>
     <RootNamespace>MPITest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MPI-Vezbe</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="zad1.c" />
     <ClCompile Include="zad2.c" />
+    <ClCompile Include="zad3.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

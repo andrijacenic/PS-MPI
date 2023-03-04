@@ -1,12 +1,12 @@
 #include <mpi.h>
 #include <stdio.h>
 /*
-Zadatak 1 :
+Zadatak 2 :
 	Napisati program kojim se elementi gornje trougaone matrice A nxn procesa 0 salju u gornju trougaonu matricu T nxn procesa 1
 */
-#define n 10
+#define n 5
 #define MCW MPI_COMM_WORLD
-int main(int argc, char* argv[]) {
+int main2(int argc, char* argv[]) {
 
 	int rank;
 	int A[n][n];
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 		blocklenghts[i] = n - i;
 		displacement[i] = i * n + i;
 		for (j = 0; j < n; j++) {
-			A[i][j] = i * n + j;
+			A[i][j] = i * n + j + 1;
 			T[i][j] = 0;
 		}
 	}
