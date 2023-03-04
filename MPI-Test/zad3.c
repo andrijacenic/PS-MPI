@@ -10,7 +10,7 @@ Zadatak 4 :
 #define n 5
 #define MCW MPI_COMM_WORLD
 #define kojaukoju 1
-int main(int argc, char* argv[]) {
+int main3(int argc, char* argv[]) {
 
 	int rank;
 	int A[n][n];
