@@ -1,1 +1,2 @@
-MPI-PS
+Predmet Paralelni sistemi - MPI
+Vezbanje + lab vezbe
