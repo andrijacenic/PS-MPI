@@ -10,7 +10,7 @@
 #define n 3
 #define k 4
 // A mxn, B nxk
-int main(int argc, char** argv) {
+int main4(int argc, char** argv) {
 	int i,j,l, p, rank, matRank;
 	int A[m][n], B[n][k], C[m][k];
 	int kolona[m], vrsta[k], tmp[m][k];
