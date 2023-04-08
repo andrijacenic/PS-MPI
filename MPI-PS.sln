@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L1Z5", "L1Z5\L1Z5.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L1Z6", "L1Z6\L1Z6.vcxproj", "{8F245526-BCDB-4F8F-B0DC-56563F2D31EB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MPI-Vezbe-Group", "MPI-Vezbe-Group\MPI-Vezbe-Group.vcxproj", "{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{8F245526-BCDB-4F8F-B0DC-56563F2D31EB}.Release|x64.Build.0 = Release|x64
 		{8F245526-BCDB-4F8F-B0DC-56563F2D31EB}.Release|x86.ActiveCfg = Release|Win32
 		{8F245526-BCDB-4F8F-B0DC-56563F2D31EB}.Release|x86.Build.0 = Release|Win32
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Debug|x64.ActiveCfg = Debug|x64
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Debug|x64.Build.0 = Debug|x64
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Debug|x86.ActiveCfg = Debug|Win32
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Debug|x86.Build.0 = Debug|Win32
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Release|x64.ActiveCfg = Release|x64
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Release|x64.Build.0 = Release|x64
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Release|x86.ActiveCfg = Release|Win32
+		{1829C61D-A1A5-44B0-B09F-4960A0BC70D4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
