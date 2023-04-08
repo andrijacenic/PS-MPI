@@ -35,35 +35,35 @@ int main(int argc, char* argv[]) {
 	MPI_Comm_rank(commColl, &rankColl);
 
 	// samo glavna dijagonala
-	MPI_Comm_split(MCW, rankRow == rankColl, rankRow, &commDiag);
-	MPI_Comm_rank(commDiag, &rankDiag);
-
-	if (rankRow == rankColl) {
-		podatak = 1122;
-		if (rank == 0) {
-			for (i = 1; i < n; i++) {
-				MPI_Send(&podatak, 1, MPI_INT, i, 1, commDiag);
-			}
-		}
-		else {
-			MPI_Recv(&podatak, 1, MPI_INT, 0, 1, commDiag, &status);
-			printf("diag rank : %2d, rank : %2d, podatak : %5d", rankDiag, rank, podatak);
-		}
-	}
-
-	//MPI_Comm_split(MCW, rank % (n + 1) * (rankColl > rankRow ? n : 1), rankRow, &commDiag);
+	//MPI_Comm_split(MCW, rankRow == rankColl, rankRow, &commDiag);
 	//MPI_Comm_rank(commDiag, &rankDiag);
-	//MPI_Comm_size(commDiag, &sizeDiag);
 
-	//if (rankDiag == 0) {
-	//	podatak = rank;
-	//	for (i = 0; i < sizeDiag; i++)
-	//		MPI_Send(&podatak, 1, MPI_INT, i, 1, commDiag);
+	//if (rankRow == rankColl) {
+	//	podatak = 1122;
+	//	if (rank == 0) {
+	//		for (i = 1; i < n; i++) {
+	//			MPI_Send(&podatak, 1, MPI_INT, i, 1, commDiag);
+	//		}
+	//	}
+	//	else {
+	//		MPI_Recv(&podatak, 1, MPI_INT, 0, 1, commDiag, &status);
+	//		printf("diag rank : %2d, rank : %2d, podatak : %5d", rankDiag, rank, podatak);
+	//	}
 	//}
-	//else {
-	//	MPI_Recv(&podatak, 1, MPI_INT, 0, 1, commDiag, &status);
-	//	printf("rank : %2d, diag rank : %2d, podatak : %5d", rank, rankDiag, podatak);
-	//}
+	// sve dijagonale
+	MPI_Comm_split(MCW, rank % (n + 1) * (rankColl > rankRow ? n : 1), rankRow, &commDiag);
+	MPI_Comm_rank(commDiag, &rankDiag);
+	MPI_Comm_size(commDiag, &sizeDiag);
+
+	if (rankDiag == 0) {
+		podatak = rank;
+		for (i = 1; i < sizeDiag; i++)
+			MPI_Send(&podatak, 1, MPI_INT, i, 1, commDiag);
+	}
+	else {
+		MPI_Recv(&podatak, 1, MPI_INT, 0, 1, commDiag, &status);
+		printf("rank : %2d, diag rank : %2d, podatak : %5d", rank, rankDiag, podatak);
+	}
 
 	MPI_Finalize();
 	return 0;
