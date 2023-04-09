@@ -23,6 +23,7 @@ int main(int argc, char* argv[]) {
 
 	MPI_Comm cartComm, trougaona;
 	MPI_Status status;
+	MPI_Request req;
 
 	MPI_Init(&argc, &argv);
 
@@ -33,28 +34,26 @@ int main(int argc, char* argv[]) {
 	MPI_Comm_rank(cartComm, &rank);
 	MPI_Cart_coords(cartComm, rank, 2, coords);
 
-	MPI_Comm_split(MCW, coords[0] > coords[1], size - rank, &trougaona);
+	MPI_Comm_split(MCW, coords[0] > coords[1], rank, &trougaona);
 	MPI_Comm_rank(trougaona, &rankTrougaona);
 
+	printf("troug : %d, rank : %3d, t rank %3d coords : (%3d, %3d)\n", coords[0] > coords[1], rank, rankTrougaona, coords[0], coords[1]);
+
+	myrank = rank;
+	MPI_Reduce(&myrank, &sum, 1, MPI_INT, MPI_SUM, 0, trougaona);
 	if (rankTrougaona == 0) {
-		myrank = rank;
-		MPI_Reduce(&myrank, &sum, 1, MPI_INT, MPI_SUM, 0, trougaona);
-		printf("local sum : %3d\n", sum);
-		MPI_Send(&sum, 1, MPI_INT, 0, coords[0] > coords[1] ? 1 : 2, MCW);
+		printf("%d\n", sum);
+		MPI_Isend(&sum, 1, MPI_INT, 0, coords[0] > coords[1] ? 1 : 2, MCW, &req);
 	}
 	if (rank == 0) {
-		coords[0] = 3;
-		coords[1] = 3;
+		coords[0] = 1;
+		coords[1] = 0;
 		MPI_Cart_rank(cartComm, coords, &rankDown);
-		rankUp = 0;
-
 		MPI_Recv(&sumDown, 1, MPI_INT, rankDown, 1, MCW, &status);
-		MPI_Recv(&sumUp, 1, MPI_INT, rankUp, 2, MCW, &status);
-
-		printf("%3d %3d", sumDown, sumUp);
+		MPI_Recv(&sumUp, 1, MPI_INT, 0, 2, MCW, &status);
+		printf("%3d %3d %3d", sumUp, sumDown, sumUp + sumDown);
 	}
 
 	MPI_Finalize();
-	// NESTO NE RADI< GLAVI SE U NEKU PETLJU
 	return 0;
 }
