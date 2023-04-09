@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
 		if (rankComm == 0) {
 			for (i = 0; i < m; i++) {
 				for (j = 0; j < n; j++) {
-					A[i][j] = rand() % 10;
+					A[i][j] = rand() % 10  ;
 				}
 			}
 		}

@@ -10,11 +10,9 @@ komunikatora MPI_COMM_WORLD dostaviti ove vrednosti i odštampati ih.
 #include <stdio.h>
 #include <math.h>
 #define MCW MPI_COMM_WORLD
-#define UP 0
-#define DOWN 1
 #define n 4
 #define m 4
-int main(int argc, char* argv[]) {
+int main6(int argc, char* argv[]) {
 
 	int rank, size, rankTrougaona;
 	int dims[2] = { m, n }, periods[2] = { 1, 1 }, reorder = 1, coords[2];
