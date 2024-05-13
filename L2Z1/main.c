@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 	//	}
 	//}
 	// sve dijagonale
-	MPI_Comm_split(MCW, rank % (n + 1) * (rankColl > rankRow ? n : 1), rankRow, &commDiag);
+	MPI_Comm_split(MCW, rank % (n + 1) + (rankColl > rankRow ? 50 : 0), rankRow, &commDiag);
 	MPI_Comm_rank(commDiag, &rankDiag);
 	MPI_Comm_size(commDiag, &sizeDiag);
 

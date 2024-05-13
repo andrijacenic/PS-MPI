@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L2Z", "L2Z\L2Z.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L2Z5-23", "L2Z5-23\L2Z5-23.vcxproj", "{DE1FFF8C-8B60-4D90-B0C1-A359898F6875}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MPI_JUN_2023", "MPI_JUN_2023\MPI_JUN_2023.vcxproj", "{3A4884B3-5667-478C-860F-E5A94EF85A92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -181,6 +183,14 @@ Global
 		{DE1FFF8C-8B60-4D90-B0C1-A359898F6875}.Release|x64.Build.0 = Release|x64
 		{DE1FFF8C-8B60-4D90-B0C1-A359898F6875}.Release|x86.ActiveCfg = Release|Win32
 		{DE1FFF8C-8B60-4D90-B0C1-A359898F6875}.Release|x86.Build.0 = Release|Win32
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Debug|x64.ActiveCfg = Debug|x64
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Debug|x64.Build.0 = Debug|x64
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Debug|x86.ActiveCfg = Debug|Win32
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Debug|x86.Build.0 = Debug|Win32
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Release|x64.ActiveCfg = Release|x64
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Release|x64.Build.0 = Release|x64
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Release|x86.ActiveCfg = Release|Win32
+		{3A4884B3-5667-478C-860F-E5A94EF85A92}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
